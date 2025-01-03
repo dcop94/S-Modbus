@@ -33,6 +33,15 @@ bool SeriPort::OpenPort(const std::string& portName,
 		fullPortName.c_str(), // 만들거나 열 파일 또는 디바이스 이름
 		GENERIC_READ | GENERIC_WRITE, // 파일 또는 디바이스에 대한 요청된 엑세스
 		0, // 엑세스 요청 (0은 다른 프로세스가 파일 또는 디바이스를 열 수 없도록 함)
+		NULL,
+		OPEN_EXISTING,
+		FILE_ATTRIBUTE_NORMAL,
+		NULL
+	);
 
-		s
+	if (m_hPort == INVALID_HANDLE_VALUE)
+	{
+		return false;
+	}
+
 }
